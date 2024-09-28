@@ -3,7 +3,17 @@
     <style name="Base.Theme.AndroidLabs" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorButtonNormal">@color/blue</item>
+        <item name="colorControlHighlight">@color/blue</item>
+
     </style>
 
     <style name="Theme.AndroidLabs" parent="Base.Theme.AndroidLabs" />
+    <style name="PrimaryColoredButton" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/blue</item>
+        <item name="colorControlHighlight">@color/blue</item>
+    </style>
 </resources>

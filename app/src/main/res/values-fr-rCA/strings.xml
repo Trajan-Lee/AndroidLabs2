@@ -2,5 +2,11 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
     <string name="hello_world">Bonjour le monde</string>
-    <string name="button_text">Je suis un bouton</string>
+    <string name="button_text">Appuyez-moi</string>
+    <string name="androidlove">J\'aime Android</string>
+    <string name="checkbutton">Regarde ça !</string>
+    <string name="switchbutton">Activer/éteindre</string>
+    <string name="buttontoast">L\'étiquette a été mise à jour</string>
+    <string name="checkon">La case à cocher est maintenant activer</string>
+    <string name="checkoff">La case à cocher est maintenant éteindre</string>
 </resources>

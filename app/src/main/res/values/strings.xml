@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
     <string name="hello_world">Hello World</string>
-    <string name="button_text">I\'m a button</string>
+    <string name="button_text">Press Me</string>
+    <string name="androidlove">I Love Android</string>
+    <string name="checkbutton">Check this out!</string>
+    <string name="switchbutton">Switch on/off</string>
+    <string name="buttontoast">Label has been updated</string>
+    <string name="checkon">The checkbox is now on</string>
+    <string name="checkoff">The checkbox is now off</string>
 </resources>
