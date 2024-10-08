@@ -8,19 +8,17 @@
     tools:context=".NameActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtWelcome"
         android:layout_width="214dp"
         android:layout_height="39dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-
         android:text="Welcome!"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnNotName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
@@ -28,16 +26,16 @@
         android:text="DON'T CALL ME THAT"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnThanks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="62dp"
         android:text="THANK YOU"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/btnNotName"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
