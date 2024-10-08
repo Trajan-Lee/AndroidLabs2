@@ -13,17 +13,18 @@
         android:layout_height="39dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Welcome!"
+        android:text="@string/welcome1"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnNotName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:layout_marginTop="10dp"
-        android:text="DON'T CALL ME THAT"
+        android:text="@string/dont_call_me_that"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
@@ -34,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="62dp"
-        android:text="THANK YOU"
+        android:text="@string/thank_you"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/btnNotName"
         app:layout_constraintTop_toTopOf="parent" />

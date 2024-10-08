@@ -28,7 +28,7 @@ public class NameActivity extends AppCompatActivity {
 
         // Update the txtWelcome with a personalized message
         if (userName != null && !userName.isEmpty()) {
-            txtWelcome.setText("Welcome " + userName + "!");
+            txtWelcome.setText(String.format("%s %s!", getString(R.string.welcome2), userName));
         }
 
         // Set Listener for "Don't call me that" button

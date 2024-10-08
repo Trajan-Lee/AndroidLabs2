@@ -1,23 +1,33 @@
 package com.example.androidlabs;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText etxtName;
-    public static final String PREFS_NAME = "UserPreferences";
-    public static final String NAME_KEY = "userName";
-    private static final int NAME_REQUEST = 1;
+
+    // Declare ActivityResultLauncher
+    private final ActivityResultLauncher<Intent> getResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_CANCELED) {
+                    // User wants to change their name
+                    etxtName.setText("");  // Clear the EditText
+                } else if (result.getResultCode() == RESULT_OK) {
+                    // User is happy, close the app
+                    finish();  // Close the activity and app
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,48 +38,34 @@ public class MainActivity extends AppCompatActivity {
         etxtName = findViewById(R.id.etxtName);
         Button btnNext = findViewById(R.id.btnNext);
 
-        // Lod name from SharedPreferences
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        String savedName = preferences.getString(NAME_KEY, "");
-        if (!savedName.isEmpty()) {
+        // Load the name from SharedPreferences
+        SharedPreferences prefs = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        String savedName = prefs.getString("user_name", null);
+        if (savedName != null) {
             etxtName.setText(savedName);
         }
 
-        // Set Listener for btnNext
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Get the name entered by the user
-                String name = etxtName.getText().toString();
+        // Set onClick listener for "Next" button
+        btnNext.setOnClickListener(view -> {
+            // Get the name from the EditText
+            String name = etxtName.getText().toString();
 
-                // Create an Intent to launch NameActivity
-                Intent intent = new Intent(MainActivity.this, NameActivity.class);
-                intent.putExtra("userName", name);
+            // Create an Intent to start NameActivity
+            Intent intent = new Intent(MainActivity.this, NameActivity.class);
+            intent.putExtra("userName", name);
 
-                // Start NameActivity with the request code
-                startActivityForResult(intent, NAME_REQUEST);
-            }
+            // Launch NameActivity using the ActivityResultLauncher
+            getResult.launch(intent);
         });
-    }
-
-    // Handle data received from NameActivity
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == NAME_REQUEST && resultCode == RESULT_OK && data != null) {
-            String updatedName = data.getStringExtra("updatedName");
-            etxtName.setText(updatedName); // Update the EditText with the returned name
-        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-
-        // Save the current name in SharedPreferences when the activity is paused
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(NAME_KEY, etxtName.getText().toString());
+        // Save the current name to SharedPreferences
+        SharedPreferences prefs = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("user_name", etxtName.getText().toString());
         editor.apply();
     }
 }
