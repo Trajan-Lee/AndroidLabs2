@@ -1,6 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AndroidLabs</string>
-    <string name="hello_world">Bonjour le monde</string>
-    <string name="button_text">Je suis un bouton</string>
+    <string name="app_name">Application de tâches</string>
+    <string name="type_here_hint">Tapez ici</string>
+    <string name="urgent">Urgent</string>
+    <string name="add">Ajouter</string>
+    <string name="dialog_title">Voulez-vous supprimer ceci ?</string>
+    <string name="dialog_message">La ligne sélectionnée est : %1$d</string>
+    <string name="delete">Supprimer</string>
+    <string name="cancel">Annuler</string>
 </resources>
