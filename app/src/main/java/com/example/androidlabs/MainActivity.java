@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private void showDeleteDialog(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.dialog_title);
-        builder.setMessage(getString(R.string.dialog_message, position));
+        builder.setMessage(getString(R.string.dialog_message, position+1));
 
         // Positive button to delete the item
         builder.setPositiveButton(R.string.delete, (dialog, which) -> {
