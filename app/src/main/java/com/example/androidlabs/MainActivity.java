@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 
 public class MainActivity extends AppCompatActivity {
-    ProgressBar progressBar = new ProgressBar(R.layout.progressBar);
+    ProgressBar progressBar = new ProgressBar(R.id.progressBar);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
