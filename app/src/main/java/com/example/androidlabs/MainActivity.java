@@ -15,9 +15,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 
 public class MainActivity extends AppCompatActivity {
-    ProgressBar progressBar = new ProgressBar(R.id.progressBar);
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        progressBar = new ProgressBar(R.id.progressBar);
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
