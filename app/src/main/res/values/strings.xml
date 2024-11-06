@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">AndroidLabs</string>
-    <string name="hello_world">Hello World</string>
-    <string name="button_text">I\'m a button</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="cat_image">This is a cat image</string>
+    <string name="title_activity_main">TV Cat Image</string>
 </resources>
