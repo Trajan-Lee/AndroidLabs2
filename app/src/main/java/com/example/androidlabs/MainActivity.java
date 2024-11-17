@@ -38,14 +38,15 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             // Check if the device is a phone or tablet
-            FrameLayout frameLayout = findViewById(R.id.frameLayout); // Check for tablet layout
+            FrameLayout frameLayout = findViewById(R.id.detailContainer); // Check for tablet layout
 
             if (frameLayout == null) {  // On phone, start EmptyActivity
                 Intent intent = new Intent(MainActivity.this, EmptyActivity.class);
                 Bundle bundle = new Bundle();
                 // Pass relevant data to the bundle
                 bundle.putString("character_name", characters.get(position).getName());
-                // Add other character details to the bundle
+                bundle.putString("character_height", characters.get(position).getHeight());
+                bundle.putString("character_mass", characters.get(position).getMass());
                 intent.putExtras(bundle);
                 startActivity(intent);
             } else {  // On tablet, replace fragment directly
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 detailsFragment.setArguments(bundle);
 
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frameLayout, detailsFragment)
+                        .replace(R.id.detailContainer, detailsFragment)
                         .commit();
             }
         });

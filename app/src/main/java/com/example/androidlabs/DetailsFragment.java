@@ -29,9 +29,9 @@ public class DetailsFragment extends Fragment {
         // Retrieve the bundle passed when the fragment was created
         Bundle bundle = getArguments();
         if (bundle != null) {
-            name_value.setText(bundle.getString("name"));
-            height_value.setText(bundle.getString("height"));
-            mass_value.setText(bundle.getString("mass"));
+            name_value.setText(bundle.getString("character_name"));
+            height_value.setText(bundle.getString("character_height"));
+            mass_value.setText(bundle.getString("character_mass"));
         }
 
         return rootView;
