@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
             }
         });
+        new FetchStarWarsCharactersTask().execute();
     }
 
     private class FetchStarWarsCharactersTask extends AsyncTask<Void, Void, List<Characters>> {
