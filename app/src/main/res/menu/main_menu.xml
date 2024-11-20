@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_choice1"
+        android:icon="@drawable/cat"
+        android:title="Choice 1"
+        app:showAsAction="always"
+        android:orderInCategory="1" />
+    <item
+        android:id="@+id/menu_choice2"
+        android:icon="@drawable/dog"
+        android:title="Choice 2"
+        app:showAsAction="always"
+        android:orderInCategory="2" />
+    <item
+        android:id="@+id/menu_overflow"
+        android:title="Overflow Choice"
+        app:showAsAction="never" />
+</menu>
